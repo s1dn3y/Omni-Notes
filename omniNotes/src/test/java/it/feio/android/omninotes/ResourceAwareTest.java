@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2019 Federico Iosue (federico@iosue.it)
+ * Copyright (C) 2013-2020 Federico Iosue (federico@iosue.it)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,9 +17,13 @@
 
 package it.feio.android.omninotes;
 
-import android.support.annotation.NonNull;
-
-import java.io.*;
+import androidx.annotation.NonNull;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 
@@ -40,8 +44,6 @@ public class ResourceAwareTest {
 
   /**
    * Retrieves test resouce InputStream
-   *
-   * @throws IOException
    */
   public static FileInputStream getResourceAsStream(@NonNull final String path) throws IOException {
     return new FileInputStream(BASE_PATH + path);
@@ -50,8 +52,6 @@ public class ResourceAwareTest {
 
   /**
    * Retrieves test resouce as {@link File} object
-   *
-   * @throws IOException
    */
   public static File getResourceAsFile(@NonNull final String path) throws IOException {
     return new File(BASE_PATH + path);
@@ -60,14 +60,13 @@ public class ResourceAwareTest {
 
   /**
    * Reads file content and returns string.
-   *
-   * @throws IOException
    */
   public static String readFile(@NonNull final String path) throws IOException {
     final StringBuilder sb = new StringBuilder();
     String strLine;
     try (final BufferedReader reader =
-        new BufferedReader(new InputStreamReader(new FileInputStream(BASE_PATH + path), "UTF-8"))) {
+        new BufferedReader(
+            new InputStreamReader(new FileInputStream(BASE_PATH + path), StandardCharsets.UTF_8))) {
       while ((strLine = reader.readLine()) != null) {
         sb.append(strLine);
       }

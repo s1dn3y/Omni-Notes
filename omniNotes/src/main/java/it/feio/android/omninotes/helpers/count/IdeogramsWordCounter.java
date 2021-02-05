@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2019 Federico Iosue (federico@iosue.it)
+ * Copyright (C) 2013-2020 Federico Iosue (federico@iosue.it)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,17 +22,17 @@ import rx.Observable;
 
 public class IdeogramsWordCounter implements WordCounter {
 
-    @Override
-    public int countWords(Note note) {
-        return countChars(note);
-    }
+  @Override
+  public int countWords(Note note) {
+    return countChars(note);
+  }
 
-    @Override
-    public int countChars(Note note) {
-        String titleAndContent = note.getTitle() + "\n" + note.getContent();
-        return Observable
-                .from(sanitizeTextForWordsAndCharsCount(note, titleAndContent).split(""))
-                .filter(s -> !s.matches("\\s"))
-                .count().toBlocking().single();
-    }
+  @Override
+  public int countChars(Note note) {
+    String titleAndContent = note.getTitle() + "\n" + note.getContent();
+    return Observable
+        .from(sanitizeTextForWordsAndCharsCount(note, titleAndContent).split(""))
+        .filter(s -> !s.matches("\\s"))
+        .count().toBlocking().single();
+  }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2019 Federico Iosue (federico@iosue.it)
+ * Copyright (C) 2013-2020 Federico Iosue (federico@iosue.it)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,11 +21,11 @@ import it.feio.android.omninotes.helpers.LogDelegate;
 
 public class NotesMergeEvent {
 
-	public final boolean keepMergedNotes;
+  public final boolean keepMergedNotes;
 
 
-	public NotesMergeEvent(boolean keepMergedNotes) {
-		LogDelegate.d(this.getClass().getName());
-		this.keepMergedNotes = keepMergedNotes;
-	}
+  public NotesMergeEvent(boolean keepMergedNotes) {
+    LogDelegate.d(this.getClass().getName());
+    this.keepMergedNotes = keepMergedNotes;
+  }
 }

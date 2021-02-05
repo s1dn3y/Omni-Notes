@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2019 Federico Iosue (federico@iosue.it)
+ * Copyright (C) 2013-2020 Federico Iosue (federico@iosue.it)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,23 +17,22 @@
 
 package it.feio.android.omninotes.factory;
 
+import android.net.Uri;
 import android.provider.MediaStore;
 
-import android.net.Uri;
-
-/**
- * Created by Relf on 11/24/2015.
- */
 public class MediaStoreFactory {
-    public Uri createURI(String type){
-        switch (type) {
-            case "image":
-                return MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-            case "video":
-                return  MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
-            case "audio":
-                return  MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
-        }
+
+  public Uri createURI(String type) {
+    switch (type) {
+      case "image":
+        return MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+      case "video":
+        return MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
+      case "audio":
+        return MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
+      default:
         return null;
     }
+  }
+
 }

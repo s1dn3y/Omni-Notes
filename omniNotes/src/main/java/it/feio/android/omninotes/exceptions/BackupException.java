@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2019 Federico Iosue (federico@iosue.it)
+ * Copyright (C) 2013-2020 Federico Iosue (federico@iosue.it)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,10 +19,10 @@ package it.feio.android.omninotes.exceptions;
 
 public class BackupException extends RuntimeException {
 
-    private static final long serialVersionUID = 7892197590810157669L;
+  private static final long serialVersionUID = 7892197590810157669L;
 
-    public BackupException(String message, Exception e) {
-        super(message, e);
-    }
+  public BackupException(String message, Exception e) {
+    super(message, e);
+  }
 
 }

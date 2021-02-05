@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2019 Federico Iosue (federico@iosue.it)
+ * Copyright (C) 2013-2020 Federico Iosue (federico@iosue.it)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,9 +19,9 @@ package it.feio.android.omninotes.models;
 
 public interface PasswordValidator {
 
-    enum Result {
-        SUCCEED, FAIL, RESTORE
-    }
+  enum Result {
+    SUCCEED, FAIL, RESTORE
+  }
 
-    void onPasswordValidated(Result result);
+  void onPasswordValidated(Result result);
 }
